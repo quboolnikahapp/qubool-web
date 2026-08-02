@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { Badge } from "@/components/badge";
@@ -59,24 +60,40 @@ export default function Home() {
               Premium experience
             </p>
             <h2 className="mt-3 text-2xl font-semibold">Built for intention, privacy, and real connection.</h2>
-            <div className="mt-6 space-y-4 text-sm text-emerald-50/90">
-              <div className="rounded-2xl border border-white/10 bg-white/10 p-4">
-                <p className="font-medium text-white">Private profile controls</p>
-                <p className="mt-1 leading-7">Share only what feels right, when it feels right.</p>
+            <div className="mt-6 grid gap-4">
+              <div className="group relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/10 shadow-lg">
+                <Image
+                  src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80"
+                  alt="Wedding portrait"
+                  width={900}
+                  height={576}
+                  className="h-64 w-full object-cover transition duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                <div className="absolute bottom-5 left-5 right-5 rounded-3xl border border-white/10 bg-white/10 p-4 text-sm text-white backdrop-blur">
+                  <p className="font-semibold">Real stories, real matches</p>
+                  <p className="mt-1 text-xs text-emerald-100/90">A warm space built for marriage and family.</p>
+                </div>
               </div>
-              <div className="rounded-2xl border border-white/10 bg-white/10 p-4">
-                <p className="font-medium text-white">Verification-ready trust</p>
-                <p className="mt-1 leading-7">Comforting signals that support trust as the foundation of your experience.</p>
-              </div>
-            </div>
-            <div className="mt-8 grid gap-3 sm:grid-cols-2">
-              <div className="rounded-2xl border border-white/10 bg-[#ffffff14] p-4">
-                <p className="text-xl font-semibold text-white">3 simple steps</p>
-                <p className="mt-1 text-sm text-emerald-50/80">Build, discover, connect</p>
-              </div>
-              <div className="rounded-2xl border border-white/10 bg-[#ffffff14] p-4">
-                <p className="text-xl font-semibold text-white">Respect first</p>
-                <p className="mt-1 text-sm text-emerald-50/80">A calm experience for meaningful connection</p>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/10 shadow-lg">
+                  <Image
+                    src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80"
+                    alt="Couple smiling"
+                    width={600}
+                    height={264}
+                    className="h-44 w-full object-cover transition duration-700 hover:scale-105"
+                  />
+                </div>
+                <div className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/10 shadow-lg">
+                  <Image
+                    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80"
+                    alt="Celebratory gathering"
+                    width={600}
+                    height={264}
+                    className="h-44 w-full object-cover transition duration-700 hover:scale-105"
+                  />
+                </div>
               </div>
             </div>
           </div>

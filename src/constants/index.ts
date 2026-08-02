@@ -52,6 +52,8 @@ export const exampleProfiles = [
     profession: "Product Designer",
     education: "University of Oxford",
     about: "A thoughtful professional who values shared faith, family connection, and calm companionship.",
+    avatarUrl:
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
   },
   {
     name: "Bilal",
@@ -60,5 +62,7 @@ export const exampleProfiles = [
     profession: "Software Engineer",
     education: "Imperial College London",
     about: "Looking for a genuine partnership rooted in purpose, growth, and family values.",
+    avatarUrl:
+      "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=400&q=80",
   },
 ];

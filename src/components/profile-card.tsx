@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Badge } from "@/components/badge";
 import { Card } from "@/components/card";
 
@@ -8,13 +9,25 @@ type ProfileCardProps = {
   profession: string;
   education: string;
   about: string;
+  avatarUrl?: string;
 };
 
-export function ProfileCard({ name, age, location, profession, education, about }: ProfileCardProps) {
+export function ProfileCard({ name, age, location, profession, education, about, avatarUrl }: ProfileCardProps) {
   return (
     <Card className="flex h-full flex-col gap-4">
-      <div className="flex items-start justify-between gap-3">
-        <div>
+      <div className="flex items-center gap-4">
+        <div className="h-20 w-20 overflow-hidden rounded-[1.5rem] bg-slate-100 shadow-sm">
+          {avatarUrl ? (
+            <Image
+              src={avatarUrl}
+              alt={`${name} profile`}
+              width={80}
+              height={80}
+              className="h-full w-full object-cover"
+            />
+          ) : null}
+        </div>
+        <div className="flex-1">
           <div className="flex items-center gap-2">
             <h3 className="text-lg font-semibold text-slate-900">{name}</h3>
             <Badge tone="emerald">Verified</Badge>
@@ -23,7 +36,6 @@ export function ProfileCard({ name, age, location, profession, education, about 
             {age} • {location}
           </p>
         </div>
-        <div className="h-14 w-14 rounded-full bg-gradient-to-br from-[var(--brand-emerald)] via-[var(--brand-gold)] to-[var(--brand-rose)]" />
       </div>
 
       <div className="space-y-2 text-sm text-slate-600">

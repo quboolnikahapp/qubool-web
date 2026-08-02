@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/badge";
 import { Button } from "@/components/button";
@@ -7,20 +8,22 @@ const filters = ["Nearby", "Verified", "Professionals", "Family-minded"];
 
 const matchPreview = [
   {
-    name: "Aisha",
+    name: "Aisha Khan",
     age: 29,
-    location: "London",
+    location: "Hyderabad",
     profession: "Product Designer",
-    education: "University of Oxford",
+    education: "Bachelor's in Design",
     about: "Values a calm home life, shared faith, and meaningful conversations.",
+    avatarUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80",
   },
   {
-    name: "Bilal",
+    name: "Mohammed Bilal",
     age: 32,
-    location: "Manchester",
+    location: "Hyderabad",
     profession: "Software Engineer",
-    education: "Imperial College London",
+    education: "Masters in Computer Science",
     about: "Looking for a respectful partnership grounded in purpose and family values.",
+    avatarUrl: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
   },
 ];
 
@@ -74,14 +77,25 @@ export default function MatchmakingPage() {
           {matchPreview.map((profile) => (
             <div key={profile.name} className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
               <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
-                <div>
-                  <div className="flex items-center gap-2">
-                    <h2 className="text-xl font-semibold text-slate-900">{profile.name}</h2>
-                    <Badge tone="emerald">Verified</Badge>
+                <div className="flex items-center gap-4">
+                  <div className="h-20 w-20 overflow-hidden rounded-[1.75rem] bg-slate-100 shadow-sm">
+                    <Image
+                      src={profile.avatarUrl}
+                      alt={`${profile.name} avatar`}
+                      width={80}
+                      height={80}
+                      className="h-full w-full object-cover"
+                    />
                   </div>
-                  <p className="mt-2 text-sm text-slate-600">
-                    {profile.age} • {profile.location}
-                  </p>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h2 className="text-xl font-semibold text-slate-900">{profile.name}</h2>
+                      <Badge tone="emerald">Verified</Badge>
+                    </div>
+                    <p className="mt-2 text-sm text-slate-600">
+                      {profile.age} • {profile.location}
+                    </p>
+                  </div>
                 </div>
                 <Button variant="secondary">View profile</Button>
               </div>

@@ -65,6 +65,7 @@ src/
   types/
   constants/
 public/
+  images/
 docs/
 ```
 
