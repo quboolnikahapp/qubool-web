@@ -23,7 +23,7 @@ export function ProfileCard({ name, age, location, profession, education, about 
             {age} • {location}
           </p>
         </div>
-        <div className="h-14 w-14 rounded-full bg-gradient-to-br from-slate-200 to-slate-300" />
+        <div className="h-14 w-14 rounded-full bg-gradient-to-br from-[var(--brand-emerald)] via-[var(--brand-gold)] to-[var(--brand-rose)]" />
       </div>
 
       <div className="space-y-2 text-sm text-slate-600">

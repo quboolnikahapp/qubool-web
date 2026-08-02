@@ -9,7 +9,7 @@ type FeatureCardProps = {
 
 export function FeatureCard({ title, description, badge }: FeatureCardProps) {
   return (
-    <Card className="h-full">
+    <Card className="h-full bg-gradient-to-br from-white to-amber-50/70">
       <Badge tone="emerald" className="mb-4">
         {badge}
       </Badge>

@@ -18,9 +18,9 @@ export function Button({
   ...props
 }: ButtonProps) {
   const variantClasses = {
-    primary: "bg-slate-900 text-white hover:bg-slate-700",
-    secondary: "border border-slate-300 bg-white text-slate-700 hover:bg-slate-50",
-    ghost: "text-slate-700 hover:bg-slate-100",
+    primary: "bg-gradient-to-r from-[var(--brand-forest)] via-[var(--brand-emerald)] to-[var(--brand-gold)] text-white shadow-[0_12px_30px_-12px_rgba(15,67,57,0.55)] hover:opacity-95",
+    secondary: "border border-emerald-200 bg-white/90 text-slate-700 hover:bg-emerald-50",
+    ghost: "text-slate-700 hover:bg-white/70",
   };
 
   return (

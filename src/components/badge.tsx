@@ -9,9 +9,9 @@ type BadgeProps = {
 
 export function Badge({ children, tone = "slate", className }: BadgeProps) {
   const toneClasses = {
-    slate: "bg-slate-100 text-slate-700",
-    emerald: "bg-emerald-50 text-emerald-700",
-    amber: "bg-amber-50 text-amber-700",
+    slate: "bg-slate-900/5 text-slate-700",
+    emerald: "bg-emerald-100/80 text-emerald-800",
+    amber: "bg-amber-100/80 text-amber-800",
   };
 
   return (

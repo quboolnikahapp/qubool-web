@@ -1,11 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8f6f0;
-  --foreground: #0f172a;
-  --brand-emerald: #0f5132;
-  --brand-forest: #1b4d3e;
-  --brand-gold: #c8a96b;
+  --background: #f7f2ea;
+  --foreground: #101720;
+  --brand-emerald: #165f4b;
+  --brand-forest: #0f4339;
+  --brand-gold: #d4a85f;
+  --brand-rose: #8d5a4a;
+  --brand-sand: #f3e7d8;
+  --brand-ice: #fdfaf5;
 }
 
 @theme inline {
@@ -21,7 +24,9 @@ html {
 
 body {
   margin: 0;
-  background: linear-gradient(180deg, #f8f6f0 0%, #f3efe6 100%);
+  background:
+    radial-gradient(circle at top left, rgba(212, 168, 95, 0.16), transparent 24%),
+    linear-gradient(135deg, #fdfaf5 0%, #f7efe1 45%, #f3e4d2 100%);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -31,6 +36,6 @@ body {
 }
 
 ::selection {
-  background: var(--brand-forest);
+  background: var(--brand-emerald);
   color: white;
 }

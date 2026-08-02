@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <main className="overflow-hidden">
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-24">
-        <div className="grid gap-10 rounded-[2rem] border border-emerald-100 bg-gradient-to-br from-white via-emerald-50 to-stone-100 p-8 shadow-[0_24px_80px_-32px_rgba(15,23,42,0.35)] lg:grid-cols-[1.1fr_0.9fr] lg:p-12">
+        <div className="grid gap-10 rounded-[2.25rem] border border-white/70 bg-gradient-to-br from-[#fdfaf5] via-[#f6efe2] to-[#e8d8c3] p-8 shadow-[0_24px_80px_-32px_rgba(15,23,42,0.35)] lg:grid-cols-[1.1fr_0.9fr] lg:p-12">
           <div className="space-y-8">
             <div className="flex flex-wrap gap-3">
               <Badge tone="emerald">Privacy-first matchmaking</Badge>
@@ -26,7 +26,7 @@ export default function Home() {
 
             <div className="space-y-5">
               <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
-                Find Your Life Partner Through A Trusted Nikah Platform
+                Meet your future with elegance, trust, and intention.
               </h1>
               <p className="max-w-2xl text-lg leading-8 text-slate-600">
                 {appConfig.tagline}
@@ -54,7 +54,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="rounded-[2rem] border border-emerald-900/10 bg-emerald-950 p-8 text-white shadow-inner">
+          <div className="rounded-[2rem] border border-emerald-900/10 bg-gradient-to-br from-[#133b31] via-[#1f5b45] to-[#296954] p-8 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.15)]">
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-200">
               Premium experience
             </p>
@@ -70,11 +70,11 @@ export default function Home() {
               </div>
             </div>
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
-              <div className="rounded-2xl border border-white/10 bg-white/10 p-4">
+              <div className="rounded-2xl border border-white/10 bg-[#ffffff14] p-4">
                 <p className="text-xl font-semibold text-white">3 simple steps</p>
                 <p className="mt-1 text-sm text-emerald-50/80">Build, discover, connect</p>
               </div>
-              <div className="rounded-2xl border border-white/10 bg-white/10 p-4">
+              <div className="rounded-2xl border border-white/10 bg-[#ffffff14] p-4">
                 <p className="text-xl font-semibold text-white">Respect first</p>
                 <p className="mt-1 text-sm text-emerald-50/80">A calm experience for meaningful connection</p>
               </div>
@@ -101,8 +101,8 @@ export default function Home() {
           <Card eyebrow="Simple journey" title="How it works" description="A thoughtful path from profile creation to meaningful connection.">
             <div className="space-y-4">
               {steps.map((step, index) => (
-                <div key={step.title} className="flex items-start gap-3 rounded-2xl border border-emerald-100 bg-emerald-50/60 p-4">
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-900 text-sm font-semibold text-white">
+                <div key={step.title} className="flex items-start gap-3 rounded-2xl border border-emerald-100 bg-gradient-to-r from-emerald-50 to-amber-50/70 p-4">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[var(--brand-emerald)] to-[var(--brand-gold)] text-sm font-semibold text-white">
                     {index + 1}
                   </div>
                   <div>
@@ -116,13 +116,13 @@ export default function Home() {
 
           <Card eyebrow="Peace of mind" title="Verification and privacy" description="The experience is designed to feel secure without ever becoming cold or clinical.">
             <div className="grid gap-4 md:grid-cols-2">
-              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+              <div className="rounded-2xl border border-emerald-100 bg-gradient-to-br from-emerald-50 to-white p-5">
                 <h3 className="font-semibold text-slate-900">Verified profile signals</h3>
                 <p className="mt-2 text-sm leading-7 text-slate-600">
                   Clear verification cues help members feel more confident from the first glance.
                 </p>
               </div>
-              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+              <div className="rounded-2xl border border-amber-100 bg-gradient-to-br from-amber-50 to-white p-5">
                 <h3 className="font-semibold text-slate-900">Private communication</h3>
                 <p className="mt-2 text-sm leading-7 text-slate-600">
                   Respectful communication and controlled visibility create the right pace for connection.
@@ -149,12 +149,12 @@ export default function Home() {
       <section id="testimonials" className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
         <Card eyebrow="Success stories" title="A space for meaningful stories" description="Testimonials will be introduced as the community grows and members begin to share their journeys.">
           <div className="grid gap-4 md:grid-cols-2">
-            <div className="rounded-2xl border border-emerald-100 bg-emerald-50/70 p-6">
+            <div className="rounded-2xl border border-emerald-100 bg-gradient-to-br from-emerald-50 to-white p-6">
               <p className="text-sm leading-7 text-slate-600">
                 “A calm and respectful experience that feels much more thoughtful than typical dating apps.”
               </p>
             </div>
-            <div className="rounded-2xl border border-emerald-100 bg-emerald-50/70 p-6">
+            <div className="rounded-2xl border border-amber-100 bg-gradient-to-br from-amber-50 to-white p-6">
               <p className="text-sm leading-7 text-slate-600">
                 “It feels premium, private, and clearly designed for people who value meaningful connection.”
               </p>
@@ -181,7 +181,7 @@ export default function Home() {
         </Card>
       </section>
 
-      <footer className="border-t border-emerald-100 bg-white/70">
+      <footer className="border-t border-emerald-100/70 bg-white/70">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-8 text-sm text-slate-600 md:flex-row md:items-center md:justify-between lg:px-8">
           <p>© 2026 Qubool Nikah App</p>
           <div className="flex flex-wrap gap-4">
