@@ -55,7 +55,7 @@ export default function SignupPage() {
   return (
     <main className="mx-auto flex min-h-[calc(100vh-80px)] max-w-6xl flex-col justify-center px-6 py-16 lg:px-8">
       <div className="mx-auto w-full max-w-2xl">
-        <Card eyebrow="Join the community" title="Create your account" description="Join a thoughtful community focused on respectful, meaningful connection.">
+        <Card eyebrow="Join the community" title="Create your account" description="Join a thoughtful community focused on respectful, meaningful connection and family-minded values.">
           <form className="space-y-5" onSubmit={handleSubmit}>
             <Input
               label="Full name"
@@ -104,6 +104,10 @@ export default function SignupPage() {
                 {statusMessage}
               </div>
             ) : null}
+
+            <div className="rounded-2xl border border-emerald-100 bg-emerald-50/70 p-3 text-sm text-slate-600">
+              Your information will be handled with care and privacy in mind as the platform grows.
+            </div>
 
             <Button type="submit" fullWidth loading={isSubmitting}>
               Sign up

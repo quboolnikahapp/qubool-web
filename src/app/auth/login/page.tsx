@@ -50,7 +50,7 @@ export default function LoginPage() {
   return (
     <main className="mx-auto flex min-h-[calc(100vh-80px)] max-w-6xl flex-col justify-center px-6 py-16 lg:px-8">
       <div className="mx-auto w-full max-w-2xl">
-        <Card eyebrow="Secure access" title="Welcome back" description="Sign in to continue your journey with Qubool.">
+        <Card eyebrow="Secure access" title="Welcome back" description="Sign in to continue your journey with Qubool in a calm, private, and respectful setting.">
           <form className="space-y-5" onSubmit={handleSubmit}>
             <Input
               label="Email"
@@ -89,6 +89,10 @@ export default function LoginPage() {
                 {statusMessage}
               </div>
             ) : null}
+
+            <div className="rounded-2xl border border-emerald-100 bg-emerald-50/70 p-3 text-sm text-slate-600">
+              Your privacy is protected. Authentication will be connected to Supabase when your backend is ready.
+            </div>
 
             <Button type="submit" fullWidth loading={isSubmitting}>
               Sign in

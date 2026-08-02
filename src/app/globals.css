@@ -1,8 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8fafc;
+  --background: #f8f6f0;
   --foreground: #0f172a;
+  --brand-emerald: #0f5132;
+  --brand-forest: #1b4d3e;
+  --brand-gold: #c8a96b;
 }
 
 @theme inline {
@@ -18,7 +21,7 @@ html {
 
 body {
   margin: 0;
-  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+  background: linear-gradient(180deg, #f8f6f0 0%, #f3efe6 100%);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -28,6 +31,6 @@ body {
 }
 
 ::selection {
-  background: #334155;
+  background: var(--brand-forest);
   color: white;
 }

@@ -5,7 +5,6 @@ import { useState } from "react";
 import { Badge } from "@/components/badge";
 import { Button } from "@/components/button";
 import { Card } from "@/components/card";
-import { EmptyState } from "@/components/empty-state";
 import { FeatureCard } from "@/components/feature-card";
 import { Modal } from "@/components/modal";
 import { ProfileCard } from "@/components/profile-card";
@@ -18,11 +17,11 @@ export default function Home() {
   return (
     <main className="overflow-hidden">
       <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-24">
-        <div className="grid gap-10 rounded-[2rem] border border-slate-200 bg-white/90 p-8 shadow-xl shadow-slate-200/60 lg:grid-cols-[1.15fr_0.85fr] lg:p-12">
+        <div className="grid gap-10 rounded-[2rem] border border-emerald-100 bg-gradient-to-br from-white via-emerald-50 to-stone-100 p-8 shadow-[0_24px_80px_-32px_rgba(15,23,42,0.35)] lg:grid-cols-[1.1fr_0.9fr] lg:p-12">
           <div className="space-y-8">
             <div className="flex flex-wrap gap-3">
-              <Badge tone="emerald">New • Privacy-first matchmaking</Badge>
-              <Badge tone="slate">Trusted by thoughtful families</Badge>
+              <Badge tone="emerald">Privacy-first matchmaking</Badge>
+              <Badge tone="amber">Trusted by thoughtful families</Badge>
             </div>
 
             <div className="space-y-5">
@@ -36,38 +35,48 @@ export default function Home() {
 
             <div className="flex flex-wrap gap-3">
               <Link href="/auth/signup">
-                <Button>Create account</Button>
+                <Button>Create your profile</Button>
               </Link>
               <Link href="/profile/create">
-                <Button variant="secondary">Create profile</Button>
+                <Button variant="secondary">Explore how it works</Button>
               </Link>
               <Button variant="ghost" onClick={() => setIsHowItWorksOpen(true)}>
-                How it works
+                View the journey
               </Button>
             </div>
 
-            <div className="flex flex-wrap gap-3 border-t border-slate-200 pt-6">
+            <div className="flex flex-wrap gap-3 border-t border-emerald-100 pt-6">
               {trustIndicators.map((indicator) => (
-                <Badge key={indicator} tone="slate" className="bg-slate-100">
+                <Badge key={indicator} tone="slate" className="bg-white/80">
                   {indicator}
                 </Badge>
               ))}
             </div>
           </div>
 
-          <div className="rounded-[2rem] bg-slate-950 p-8 text-white">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-400">
+          <div className="rounded-[2rem] border border-emerald-900/10 bg-emerald-950 p-8 text-white shadow-inner">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-200">
               Premium experience
             </p>
             <h2 className="mt-3 text-2xl font-semibold">Built for intention, privacy, and real connection.</h2>
-            <div className="mt-6 space-y-4 text-sm text-slate-300">
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+            <div className="mt-6 space-y-4 text-sm text-emerald-50/90">
+              <div className="rounded-2xl border border-white/10 bg-white/10 p-4">
                 <p className="font-medium text-white">Private profile controls</p>
                 <p className="mt-1 leading-7">Share only what feels right, when it feels right.</p>
               </div>
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                <p className="font-medium text-white">Verification ready</p>
+              <div className="rounded-2xl border border-white/10 bg-white/10 p-4">
+                <p className="font-medium text-white">Verification-ready trust</p>
                 <p className="mt-1 leading-7">Comforting signals that support trust as the foundation of your experience.</p>
+              </div>
+            </div>
+            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+              <div className="rounded-2xl border border-white/10 bg-white/10 p-4">
+                <p className="text-xl font-semibold text-white">3 simple steps</p>
+                <p className="mt-1 text-sm text-emerald-50/80">Build, discover, connect</p>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/10 p-4">
+                <p className="text-xl font-semibold text-white">Respect first</p>
+                <p className="mt-1 text-sm text-emerald-50/80">A calm experience for meaningful connection</p>
               </div>
             </div>
           </div>
@@ -88,12 +97,12 @@ export default function Home() {
       </section>
 
       <section id="how-it-works" className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-          <Card eyebrow="Simple process" title="How it works" description="A thoughtful journey from profile creation to meaningful connection.">
+        <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+          <Card eyebrow="Simple journey" title="How it works" description="A thoughtful path from profile creation to meaningful connection.">
             <div className="space-y-4">
               {steps.map((step, index) => (
-                <div key={step.title} className="flex items-start gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4">
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-900 text-sm font-semibold text-white">
+                <div key={step.title} className="flex items-start gap-3 rounded-2xl border border-emerald-100 bg-emerald-50/60 p-4">
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-900 text-sm font-semibold text-white">
                     {index + 1}
                   </div>
                   <div>
@@ -105,7 +114,7 @@ export default function Home() {
             </div>
           </Card>
 
-          <Card eyebrow="Built with care" title="Verification and privacy" description="The experience is designed to feel secure without ever becoming cold or clinical.">
+          <Card eyebrow="Peace of mind" title="Verification and privacy" description="The experience is designed to feel secure without ever becoming cold or clinical.">
             <div className="grid gap-4 md:grid-cols-2">
               <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
                 <h3 className="font-semibold text-slate-900">Verified profile signals</h3>
@@ -126,8 +135,8 @@ export default function Home() {
 
       <section className="mx-auto max-w-7xl px-6 py-8 lg:px-8">
         <SectionHeading
-          eyebrow="Community preview"
-          title="Profiles designed for future Supabase data"
+          eyebrow="Profile experience"
+          title="A premium profile experience that feels warm and intentional"
           description="This layout is ready to evolve into rich, real member profiles once backend data is connected."
         />
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
@@ -137,30 +146,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <Card eyebrow="Prepared experience" title="Ready for the next step?" description="The profile flow is intentionally simple, secure, and ready for future Supabase-driven expansion.">
-          <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
-            <div>
-              <p className="text-sm leading-8 text-slate-600">
-                Thoughtful onboarding, clear verification cues, and a calm interface help create a premium first impression.
-              </p>
-            </div>
-            <div className="w-full max-w-sm">
-              <EmptyState title="Matches will appear here soon" description="The experience is being prepared for Supabase-powered discovery and private conversations." />
-            </div>
-          </div>
-        </Card>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 pb-16 lg:px-8">
-        <Card eyebrow="Testimonials" title="What members are saying" description="Testimonials will be introduced as the community grows.">
+      <section id="testimonials" className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+        <Card eyebrow="Success stories" title="A space for meaningful stories" description="Testimonials will be introduced as the community grows and members begin to share their journeys.">
           <div className="grid gap-4 md:grid-cols-2">
-            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+            <div className="rounded-2xl border border-emerald-100 bg-emerald-50/70 p-6">
               <p className="text-sm leading-7 text-slate-600">
                 “A calm and respectful experience that feels much more thoughtful than typical dating apps.”
               </p>
             </div>
-            <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+            <div className="rounded-2xl border border-emerald-100 bg-emerald-50/70 p-6">
               <p className="text-sm leading-7 text-slate-600">
                 “It feels premium, private, and clearly designed for people who value meaningful connection.”
               </p>
@@ -169,12 +163,33 @@ export default function Home() {
         </Card>
       </section>
 
-      <footer className="border-t border-slate-200 bg-white/80">
+      <section className="mx-auto max-w-7xl px-6 pb-16 lg:px-8">
+        <Card eyebrow="Begin your journey" title="Begin Your Journey Towards Nikah" description="Create your profile and begin a thoughtful journey toward a meaningful partnership.">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+            <p className="max-w-2xl text-sm leading-8 text-slate-600">
+              The experience is designed to feel private, respectful, and calm from the first interaction onward.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/auth/signup">
+                <Button>Create your profile</Button>
+              </Link>
+              <Link href="/matchmaking">
+                <Button variant="secondary">Explore matchmaking</Button>
+              </Link>
+            </div>
+          </div>
+        </Card>
+      </section>
+
+      <footer className="border-t border-emerald-100 bg-white/70">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-8 text-sm text-slate-600 md:flex-row md:items-center md:justify-between lg:px-8">
           <p>© 2026 Qubool Nikah App</p>
-          <div className="flex gap-4">
+          <div className="flex flex-wrap gap-4">
             <Link href="/auth/login" className="transition hover:text-slate-900">
               Login
+            </Link>
+            <Link href="/matchmaking" className="transition hover:text-slate-900">
+              Matchmaking
             </Link>
             <Link href="/profile/create" className="transition hover:text-slate-900">
               Create profile

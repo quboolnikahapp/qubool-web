@@ -7,8 +7,9 @@ import { cn } from "@/lib/utils/cn";
 
 const navItems = [
   { href: "/", label: "Home" },
-  { href: "/#how-it-works", label: "How it works" },
+  { href: "/#how-it-works", label: "How It Works" },
   { href: "/#features", label: "Features" },
+  { href: "/#testimonials", label: "Success Stories" },
   { href: "/auth/login", label: "Login" },
   { href: "/profile/create", label: "Create Profile" },
 ];
@@ -21,7 +22,7 @@ export function Navbar() {
     <header className="border-b border-slate-200 bg-white/80 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         <Link href="/" className="text-lg font-semibold tracking-tight text-slate-900">
-          Qubool Nikah App
+          <span className="text-emerald-700">Qubool</span> Nikah App
         </Link>
 
         <nav className="hidden items-center gap-5 text-sm font-medium text-slate-600 md:flex">
