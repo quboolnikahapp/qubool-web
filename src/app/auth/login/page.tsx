@@ -5,6 +5,8 @@ import { useState } from "react";
 import { Button } from "@/components/button";
 import { Card } from "@/components/card";
 import { Input } from "@/components/input";
+import { supabase } from "@/lib/supabase/client";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -13,6 +15,7 @@ export default function LoginPage() {
   const [errors, setErrors] = useState<{ email?: string; password?: string }>({});
   const [statusMessage, setStatusMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const router = useRouter();
 
   function validateForm() {
     const nextErrors: { email?: string; password?: string } = {};
@@ -42,9 +45,29 @@ export default function LoginPage() {
     }
 
     setIsSubmitting(true);
-    await new Promise((resolve) => window.setTimeout(resolve, 900));
-    setIsSubmitting(false);
-    setStatusMessage("Your sign-in form is ready for Supabase integration.");
+    try {
+      if (!supabase) {
+        setIsSubmitting(false);
+        setStatusMessage("Supabase not configured. Add NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY to your .env.local.");
+        return;
+      }
+
+      const { error } = await supabase.auth.signInWithPassword({ email, password });
+      setIsSubmitting(false);
+
+      if (error) {
+        setStatusMessage(error.message);
+        return;
+      }
+
+      // On success, navigate to matchmaking (or user's dashboard)
+      setStatusMessage("Sign-in successful — redirecting...");
+      router.push("/matchmaking");
+    } catch (err: unknown) {
+      setIsSubmitting(false);
+      const message = err instanceof Error ? err.message : String(err);
+      setStatusMessage(message || "An unexpected error occurred.");
+    }
   }
 
   return (
