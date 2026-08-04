@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+.site-brand,.footer-brand { display:block!important; width:132px!important; }
+.footer-brand { width:150px!important; }
+.site-brand img,.footer-brand img { display:block; width:100%; height:auto; }
+
 /* The approved Qubool couple image is the hero image across desktop and mobile. */
 .web-hero-image { background-image: url('/qubool-hero-couple.png') !important; background-position: center 28% !important; }
 

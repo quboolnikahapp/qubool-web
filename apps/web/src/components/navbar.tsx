@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { QuboolLogo } from "@/components/qubool-logo";
 
 const links = [
   { href: "#why-qubool", label: "Why Qubool" },
@@ -14,7 +15,7 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <header className="site-nav">
-      <Link className="site-brand" href="/">Qubool<span>♥</span></Link>
+      <QuboolLogo className="site-brand" priority />
       <nav className="site-links" aria-label="Main navigation">
         {links.map((link) => <Link href={link.href} key={link.href}>{link.label}</Link>)}
       </nav>
