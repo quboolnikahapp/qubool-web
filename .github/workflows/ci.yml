@@ -5,14 +5,45 @@ on:
     branches: [main]
   pull_request:
 
+permissions:
+  contents: read
+
 jobs:
   web:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm install
-      - run: npm run lint
-      - run: npm run build
+          cache: pnpm
+      - run: pnpm install --no-frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm build
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: https://example.supabase.co
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ci-placeholder-only
+
+  supabase:
+    runs-on: ubuntu-latest
+    env:
+      GOOGLE_CLIENT_ID: ci-google-client-id
+      GOOGLE_CLIENT_SECRET: ci-google-client-secret
+      APPLE_CLIENT_ID: ci-apple-client-id
+      APPLE_CLIENT_SECRET: ci-apple-client-secret
+    steps:
+      - uses: actions/checkout@v4
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+      - run: supabase --version
+      - run: supabase start
+      - run: supabase db reset --local
+      - run: supabase migration list --local
+      - run: supabase functions --help
+      - if: always()
+        run: supabase stop

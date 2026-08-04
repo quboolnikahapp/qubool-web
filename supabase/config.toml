@@ -1,2 +1,98 @@
+project_id = "qubool"
+
 [api]
+enabled = true
 port = 54321
+schemas = ["public", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+port = 54322
+major_version = 17
+
+[studio]
+enabled = true
+port = 54323
+
+[inbucket]
+enabled = true
+port = 54324
+
+[auth]
+enabled = true
+site_url = "http://localhost:3000"
+additional_redirect_urls = ["http://localhost:3000/auth/callback", "http://127.0.0.1:3000/auth/callback"]
+jwt_expiry_limit = 3600
+enable_signup = true
+enable_anonymous_sign_ins = false
+enable_manual_linking = false
+minimum_password_length = 12
+password_requirements = "lower_upper_letters_digits_symbols"
+
+[auth.email]
+enable_signup = true
+double_confirm_changes = true
+enable_confirmations = true
+secure_password_change = true
+max_frequency = "60s"
+otp_length = 8
+otp_expiry = 3600
+
+[auth.email.template.confirmation]
+subject = "Confirm your Qubool email address"
+content_path = "./templates/confirmation.html"
+
+[auth.email.template.recovery]
+subject = "Reset your Qubool password"
+content_path = "./templates/recovery.html"
+
+[auth.email.notification.password_changed]
+enabled = true
+subject = "Your Qubool password was changed"
+content_path = "./templates/password-changed.html"
+
+[auth.external.google]
+enabled = true
+client_id = "env(GOOGLE_CLIENT_ID)"
+secret = "env(GOOGLE_CLIENT_SECRET)"
+redirect_uri = "http://localhost:54321/auth/v1/callback"
+
+[auth.external.apple]
+enabled = true
+client_id = "env(APPLE_CLIENT_ID)"
+secret = "env(APPLE_CLIENT_SECRET)"
+redirect_uri = "http://localhost:54321/auth/v1/callback"
+
+[storage]
+enabled = true
+file_size_limit = "50MiB"
+
+[storage.buckets.profile-images]
+public = true
+file_size_limit = "10MiB"
+allowed_mime_types = ["image/jpeg", "image/png", "image/webp"]
+
+[storage.buckets.verification-documents]
+public = false
+file_size_limit = "15MiB"
+allowed_mime_types = ["image/jpeg", "image/png", "application/pdf"]
+
+[storage.buckets.chat-media]
+public = false
+file_size_limit = "25MiB"
+allowed_mime_types = ["image/jpeg", "image/png", "image/webp", "application/pdf", "audio/mpeg", "audio/mp4"]
+
+[realtime]
+enabled = true
+
+[edge_runtime]
+enabled = true
+policy = "per_worker"
+deno_version = 2
+
+[functions.webhooks]
+verify_jwt = false
+
+[analytics]
+enabled = true
