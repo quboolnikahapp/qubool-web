@@ -18,15 +18,15 @@ export function Button({
   ...props
 }: ButtonProps) {
   const variantClasses = {
-    primary: "bg-gradient-to-r from-[var(--brand-forest)] via-[var(--brand-emerald)] to-[var(--brand-gold)] text-white shadow-[0_12px_30px_-12px_rgba(15,67,57,0.55)] hover:opacity-95",
-    secondary: "border border-emerald-200 bg-white/90 text-slate-700 hover:bg-emerald-50",
-    ghost: "text-slate-700 hover:bg-white/70",
+    primary: "bg-emerald-700 hover:bg-emerald-800 text-white shadow-lg hover:shadow-xl transition-all",
+    secondary: "border-2 border-emerald-700 text-emerald-700 bg-transparent hover:bg-emerald-50",
+    ghost: "text-emerald-700 hover:bg-emerald-50",
   };
 
   return (
     <button
       className={cn(
-        "inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold transition focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-70",
+        "inline-flex items-center justify-center rounded-full px-6 py-3 text-base font-semibold transition focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-70",
         variantClasses[variant],
         fullWidth && "w-full",
         className,
