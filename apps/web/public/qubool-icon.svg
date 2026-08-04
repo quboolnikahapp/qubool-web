@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" role="img" aria-labelledby="title description">
+  <title id="title">Qubool icon</title><desc id="description">Emerald Q with a red heart</desc>
+  <circle cx="82" cy="82" r="58" fill="#FFFDF9" stroke="#125A35" stroke-width="20"/>
+  <path d="m122 122 38 38" stroke="#125A35" stroke-width="20" stroke-linecap="round"/>
+  <path d="M82 105S53 89 53 67a17 17 0 0 1 29-12 17 17 0 0 1 29 12c0 22-29 38-29 38Z" fill="#C94B4B"/>
+</svg>

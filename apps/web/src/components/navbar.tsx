@@ -15,7 +15,7 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <header className="site-nav">
-      <QuboolLogo className="site-brand" priority />
+      <QuboolLogo className="site-brand" priority theme="dark" />
       <nav className="site-links" aria-label="Main navigation">
         {links.map((link) => <Link href={link.href} key={link.href}>{link.label}</Link>)}
       </nav>
