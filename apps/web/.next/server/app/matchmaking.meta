@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/matchmaking/layout,_N_T_/matchmaking/page,_N_T_/matchmaking"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/matchmaking/__PAGE__",
+    "/matchmaking",
+    "/_index",
+    "/_head"
+  ]
+}

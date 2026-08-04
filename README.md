@@ -56,16 +56,21 @@ Deployment is prepared for Netlify through netlify.toml with:
 ## Folder structure
 
 ```text
-src/
-  app/
-  components/
-  features/
-  lib/
-  hooks/
+apps/
+  web/
+    app/
+    components/
+    features/
+    lib/
+    hooks/
+    types/
+    constants/
+packages/
+  ui/
   types/
-  constants/
-public/
-  images/
+  utils/
+  config/
+supabase/
 docs/
 ```
 
